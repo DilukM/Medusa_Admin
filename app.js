@@ -35,7 +35,7 @@ function createTableRow(doc) {
         <td>${doc.data().ticketNumber}</td>
         <td><button class="update-btn btn btn-primary" data-id="${
           doc.id
-        }">Update</button></td>
+        }">Ticket No</button></td>
         <td><button class="delete-btn btn btn-danger" data-id="${
           doc.id
         }">Delete</button></td>
@@ -92,7 +92,7 @@ function createTableRow(doc) {
     }
 
     try {
-      await db.collection("medusa").doc(doc.id).delete();
+      //await db.collection("medusa").doc(doc.id).delete();
     } catch (error) {
       console.error("Error deleting Record: ", error);
     }
@@ -113,8 +113,7 @@ db.collection("medusa").onSnapshot((snapshot) => {
                 <th>Ticket Type</th>
                 <th>Ticket Count</th>
                 <th>Ticket Number</th>
-                <th>Update</th>
-                <th>Delete</th>
+
             </tr>
         </thead>
     `;

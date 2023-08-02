@@ -1,0 +1,44 @@
+/* Add your custom CSS styles here */
+
+/* Center the content vertically on the page */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Add padding to the form and table */
+#student-form,
+.table {
+  padding: 15px;
+}
+
+/* Style the buttons */
+.btn {
+  margin-top: 10px;
+}
+
+/* Center the image at the top */
+.text-center {
+  position: relative;
+  max-height: 20px;
+}
+.text-center img {
+  max-width: 100px; /* Adjust the image size as needed */
+
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Additional styles for responsiveness */
+@media (max-width: 768px) {
+  /* Adjust the layout for smaller screens */
+  #student-form,
+  .table {
+    padding: 10px;
+  }
+}

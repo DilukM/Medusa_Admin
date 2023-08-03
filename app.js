@@ -121,4 +121,17 @@ db.collection("medusa").onSnapshot((snapshot) => {
     const row = createTableRow(doc);
     studentTable.appendChild(row);
   });
+
+  // Update the total ticket count
+  updateTotalTicketCount(snapshot);
 });
+
+// Function to update the total ticket count
+function updateTotalTicketCount(snapshot) {
+  let totalCount = 0;
+  snapshot.docs.forEach((doc) => {
+    const ticketCount = parseInt(doc.data().number_of_tickets, 10); // Convert to integer
+    totalCount += ticketCount;
+  });
+  document.getElementById("total-count").textContent = totalCount;
+}
